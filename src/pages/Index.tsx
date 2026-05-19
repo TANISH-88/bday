@@ -29,8 +29,8 @@ const getChromeIntentUrl = (url: string) => {
     const pageUrl = window.location.href;
     const parsed = new URL(pageUrl);
     const path = `${parsed.host}${parsed.pathname}${parsed.search}${parsed.hash}`;
-    // Use Google package instead - more common
-    return `intent://${path}#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end`;
+    // Chrome is built-in on Android, always works
+    return `intent://${path}#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end`;
   } catch {
     return url;
   }
