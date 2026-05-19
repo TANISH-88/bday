@@ -22,9 +22,13 @@ const GIFT_GIF = "/cat.gif";
 const SURPRISE_VIDEO = "https://cdn.discordapp.com/attachments/1320696785022353482/1505951744960626778/Hamster_Rat_Doing_Backflip_and_Hysterically_Laughing_Meme_Template_by_514MMemes_1.mp4?ex=6a0d271b&is=6a0bd59b&hm=d291fe7bb8e126c07099d34e4d21159a328f9ec43c2ec0793cf793b8e7ebc6be&";
 
 const getChromeIntentUrl = (url: string) => {
-  // Just open the URL directly - Android will handle it properly
-  // No need for complex intent schemes that can break with video URLs
-  return url;
+  // For mobile, open the website itself in Chrome (not the raw video URL)
+  // This ensures the video plays in the embedded player, not downloaded
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  if (!isMobile) return url;
+  
+  // Open the current website in Chrome instead of raw video URL
+  return window.location.href;
 };
 
 const EventDetail = ({ icon: Icon, title, text, onClick }: { icon: any; title: string; text: string; onClick?: () => void }) => (
