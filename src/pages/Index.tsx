@@ -28,9 +28,9 @@ const getChromeIntentUrl = (url: string) => {
   try {
     const pageUrl = window.location.href;
     const parsed = new URL(pageUrl);
-    // Proper Android intent format: intent://host/path#Intent;scheme=https;package=com.android.chrome;end
     const path = `${parsed.host}${parsed.pathname}${parsed.search}${parsed.hash}`;
-    return `intent://${path}#Intent;scheme=https;package=com.android.chrome;action=android.intent.action.VIEW;end`;
+    // Use Google package instead - more common
+    return `intent://${path}#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end`;
   } catch {
     return url;
   }
