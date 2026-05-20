@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Heart, Crown, Flower2, Sparkles, Star, Music, Gift, Camera, MessageCircle, Cake, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Heart, Crown, Flower2, Sparkles, Star, Music, Gift, Camera, MessageCircle, Cake, Zap, ChevronLeft, ChevronRight, Chrome } from "lucide-react";
 import CameraBackground from "@/components/CameraBackground";
 import MouseParticles from "@/components/MouseParticles";
+import { openInChrome } from "@/lib/chromeRedirect";
 
 // Mom & Sister Data
 const MOM_NAME = "Mom";
@@ -466,6 +467,18 @@ const Index = () => {
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Celebrating two extraordinary women on this special day
           </p>
+          
+          {/* Chrome Redirect Button */}
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            onClick={() => openInChrome("https://bday-rust-two.vercel.app/")}
+            className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 mx-auto"
+          >
+            <Chrome className="w-5 h-5" />
+            Open in Chrome
+          </motion.button>
         </motion.div>
 
         {/* Decorative Birthday Elements */}
