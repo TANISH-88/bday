@@ -478,9 +478,8 @@ const Index = () => {
             transition={{ delay: 0.6 }}
             className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 mx-auto w-fit"
             onClick={(e) => {
-              if (!confirm("Open this link in Chrome?")) {
-                e.preventDefault();
-              }
+              e.preventDefault();
+              openInChrome("https://bday-rust-two.vercel.app/");
             }}
           >
             <Chrome className="w-5 h-5" />
