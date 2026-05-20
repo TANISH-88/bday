@@ -2,13 +2,13 @@ import { useMemo } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const COLORS = [
-  "hsl(36, 90%, 55%)",
-  "hsl(12, 80%, 65%)",
-  "hsl(340, 70%, 60%)",
-  "hsl(200, 70%, 60%)",
-  "hsl(160, 60%, 50%)",
-  "hsl(280, 60%, 65%)",
-  "hsl(50, 90%, 60%)",
+  "hsl(36, 90%, 55%)",      // Golden
+  "hsl(12, 80%, 65%)",      // Coral/Orange
+  "hsl(340, 70%, 60%)",     // Rose Pink
+  "hsl(280, 60%, 65%)",     // Purple
+  "hsl(50, 90%, 60%)",      // Bright Yellow
+  "hsl(290, 70%, 65%)",     // Magenta
+  "hsl(45, 95%, 50%)",      // Bright Gold
 ];
 
 const ConfettiPiece = ({ index, isMobile }: { index: number; isMobile: boolean }) => {
